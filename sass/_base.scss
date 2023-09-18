@@ -40,6 +40,11 @@ Grey dark 3: #999
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
+$bp-largest: 75em;
+$bp-large: 68.75em;
+$bp-medium: 56.25em;
+$bp-small: 37.5em;
+$bp-smallest: 31.25em;
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
@@ -57,4 +62,7 @@ body {
 html {
   box-sizing: border-box;
   font-size: 62.5%; //1rem=10px,10px/16px
+  @media only screen and(max-width:$bp-large) {
+    font-size: 50%; //8px
+  }
 }

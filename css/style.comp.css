@@ -52,6 +52,9 @@ body {
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
 
 .logo {
   height: 3.25rem;
@@ -62,6 +65,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media only screen and (max-width: 31.25em) {
+    .search {
+      order: 1;
+      flex: 0 0 100%; } }
   .search-input {
     font-family: inherit;
     font-size: inherit;
@@ -131,10 +138,20 @@ html {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .side-nav {
+      display: flex;
+      margin: 0; } }
   .side-nav-item {
     position: relative; }
+    @media only screen and (max-width: 56.25em) {
+      .side-nav-item {
+        flex: 1; } }
     .side-nav-item:not(:last-child) {
       margin-bottom: 0.5rem; }
+      @media only screen and (max-width: 56.25em) {
+        .side-nav-item:not(:last-child) {
+          margin-bottom: 0; } }
   .side-nav-item::before {
     content: "";
     position: absolute;
@@ -161,17 +178,34 @@ html {
     align-items: center;
     padding: 1.5rem 3rem;
     z-index: 10; }
+    @media only screen and (max-width: 56.25em) {
+      .side-nav-link:link, .side-nav-link:visited {
+        justify-content: center;
+        padding: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .side-nav-link:link, .side-nav-link:visited {
+        flex-direction: column;
+        padding: 1.5rem 0.5rem; } }
   .side-nav-icon {
     height: 1.75rem;
     width: 1.75rem;
     fill: var(--color-Grey-light-1);
     margin-right: 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .side-nav-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0;
+        margin-bottom: 0.7rem; } }
 
 .legal {
   font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
   color: var(--color-Grey-light-4); }
+  @media only screen and (max-width: 56.25em) {
+    .legal {
+      display: none; } }
 
 .gallery {
   display: flex; }
@@ -190,6 +224,10 @@ html {
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .overview-heading {
+        font-size: 1.8rem;
+        padding: 1.25rem 2rem; } }
   .overview-stars {
     margin-right: auto;
     display: flex; }
@@ -212,10 +250,22 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 37.5em) {
+      .overview-rating {
+        padding: 0 1.5rem; } }
+  .overview-rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 37.5em) {
+      .overview-rating-count {
+        font-size: 0.5rem; } }
   .overview-rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px; }
+    @media only screen and (max-width: 37.5em) {
+      .overview-rating-average {
+        font-size: 1.8rem; } }
 
 .btn-inline {
   border: none;
@@ -287,6 +337,8 @@ html {
   align-items: center; }
   .recommend-count {
     margin-right: auto; }
+  .recommend-friends {
+    display: flex; }
   .recommend-photo {
     width: 3rem;
     width: 3rem;
@@ -294,7 +346,7 @@ html {
     border-radius: 50%;
     border: 3px solid #fff; }
     .recommend-photo:not(:first-of-type) {
-      margin-left: -0.9rem; }
+      margin-left: -2rem; }
 
 .review {
   background-color: #fff;
@@ -303,6 +355,10 @@ html {
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden; }
+  @media only screen and (max-width: 56.25em) {
+    .review {
+      padding: 2rem;
+      margin-bottom: 3; } }
   .review-text {
     position: relative;
     z-index: 10; }
@@ -340,8 +396,11 @@ html {
     z-index: 1; }
 
 .cta {
-  padding: 3.5rem;
+  padding: 3.5rem 0;
   text-align: center; }
+  @media only screen and (max-width: 56.25em) {
+    .cta {
+      padding: 2.5rem 0; } }
   .cta-book-now {
     color: #000000;
     font-size: 2rem;
@@ -356,9 +415,12 @@ html {
   border-radius: 100px;
   border: none;
   color: #fff;
+  cursor: pointer;
   overflow: hidden;
   position: relative;
   background-image: linear-gradient(to right, var(--color-Primary-light), var(--color-Primary-dark)); }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-Primary-light), var(--color-Primary-dark)); }
   .btn-visible {
     display: inline-block;
     padding: 2rem 7.5rem;
@@ -370,8 +432,7 @@ html {
     position: absolute;
     padding: 2rem 0;
     height: 100%;
-    text-align: center;
-    width: 100;
+    width: 100%;
     left: 0;
     top: -100%;
     transition: all 0.2s; }
@@ -379,6 +440,8 @@ html {
     transform: translateY(100%); }
   .btn:hover .btn-invisible {
     top: 0; }
+  .btn:focus {
+    animation: pulsate 1s infinite; }
 
 .container {
   max-width: 120rem;
@@ -386,6 +449,10 @@ html {
   background-color: var(--color-Grey-light-1);
   min-height: 50rem;
   box-shadow: var(--shadow-dark); }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0;
+      max-width: 100%; } }
 
 .header {
   height: 7rem;
@@ -395,10 +462,18 @@ html {
   justify-content: space-between;
   align-items: center;
   font-size: 1.4rem; }
+  @media only screen and (max-width: 31.25em) {
+    .header {
+      flex-wrap: wrap;
+      height: 11rem;
+      align-content: space-around; } }
 
 .content {
   color: var(--color-Grey-light-1);
   display: flex; }
+  @media only screen and (max-width: 56.25em) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   background-color: var(--color-Grey-dark-1);
@@ -416,6 +491,12 @@ html {
   border-bottom: var(--line);
   background-color: var(--color-Grey-light-1);
   font-size: 1.4rem; }
+  @media only screen and (max-width: 56.25em) {
+    .detail {
+      padding: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .detail {
+      flex-direction: column; } }
 
 .description {
   background-color: #fff;
@@ -423,6 +504,14 @@ html {
   margin-right: 4.5rem;
   box-shadow: var(--shadow-light);
   padding: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .description {
+      padding: 3rem;
+      margin-right: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .description {
+      margin-right: 0;
+      margin-bottom: 3rem; } }
 
 .user-reviews {
   flex: 1;
